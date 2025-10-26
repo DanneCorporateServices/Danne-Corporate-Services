@@ -6,14 +6,7 @@
   <title>Danne Corporate Services — Governance Advisor</title>
   <meta name="description" content="Danne Corporate Services provides professional company secretarial, compliance, and governance support in Nigeria. Meet our Governance Advisor Bot.">
   <style>
-    body {
-  background-image: url('background.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
-}
-    :root {
+       :root {
   --blue: #0a1f44;      
   --gold: #d4a017;      
   --light: #f7f9fc;     
@@ -21,13 +14,25 @@
   --muted: #606c88;  
   --maxw: 1000px;
 }
+     body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      color: var(--text);
+      background-image: url('background.png'); /* your uploaded image */
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: center;
+      position: relative;
+      overflow-x: hidden;
+    }
 body::before {
-  content: "";
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(255, 255, 255, 0.75); /* soft white filter */
-  z-index: -1;
-}
+      content: "";
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(255, 255, 255, 0.8); /* adjust transparency if needed */
+      z-index: -1;
+    }
     header{
       background:linear-gradient(90deg,var(--blue),#092c6b);
       color:white;
