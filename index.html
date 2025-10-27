@@ -14,6 +14,9 @@
   --muted: #606c88;  
   --maxw: 1000px;
 }
+    html {
+  scroll-behavior: smooth;
+}
      body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, sans-serif;
@@ -32,6 +35,10 @@ body::before {
   top: 0; left: 0; right: 0; bottom: 0;
   background: rgba(255, 255, 255, 0.85); /* 85% white fade */
   z-index: -1;
+}
+    nav a.active {
+  color: var(--gold);
+  border-bottom: 2px solid var(--gold);
 }
     .about-banner img {
   width: 100%;
@@ -254,6 +261,26 @@ html {
   </form>
 </div>
 </section>
+<script>
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll("nav a");
+
+window.addEventListener("scroll", () => {
+  let current = "";
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 100;
+    if (scrollY >= sectionTop) {
+      current = section.getAttribute("id");
+    }
+  });
+  navLinks.forEach(a => {
+    a.classList.remove("active");
+    if (a.getAttribute("href") === "#" + current) {
+      a.classList.add("active");
+    }
+  });
+});
+</script>
 
   <footer>
     © 2025 Danne Corporate Services. All rights reserved.
