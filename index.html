@@ -119,12 +119,17 @@ body::before {
       font-size:0.9rem;
       margin-top:60px;
     }
-    /* Hamburger Menu Styles */
+ /* Hamburger Menu Styles */
 .menu-toggle {
   display: none;
   font-size: 1.8rem;
   cursor: pointer;
   color: white;
+}
+
+/* Animation setup */
+nav {
+  transition: all 0.4s ease-in-out;
 }
 
 /* Mobile View */
@@ -137,6 +142,14 @@ body::before {
     text-align: left;
     padding: 15px 20px;
     border-radius: 8px;
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+
+  nav.active {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
   }
 
   nav a {
@@ -149,10 +162,6 @@ body::before {
 
   .menu-toggle {
     display: block;
-  }
-
-  nav.active {
-    display: flex;
   }
 
   header .wrap {
@@ -389,7 +398,9 @@ window.addEventListener("scroll", () => {
 <script>
   function toggleMenu() {
     const nav = document.getElementById('navbar');
+    const toggle = document.querySelector('.menu-toggle');
     nav.classList.toggle('active');
+    toggle.textContent = nav.classList.contains('active') ? '✖' : '☰';
   }
 </script>
 
