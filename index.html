@@ -58,51 +58,67 @@ body::before {
       color:white;
       padding:18px 0;
     }
-     header .wrap {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  header h1 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-  }
-
-  nav a {
-    display: inline-block;
-    margin: 6px 10px 0 0;
-    font-size: 0.9rem;
-  }
-
-  .hero {
-    padding: 40px 15px;
-  }
-
-  .hero h2 {
-    font-size: 1.4rem;
-  }
-
-  .btn {
-    display: block;
-    margin: 12px auto;
-    width: 80%;
-    text-align: center;
-  }
-
-  section {
-    margin: 40px auto;
-    padding: 0 15px;
-  }
-
-  iframe {
-    height: 400px;
-  }
-
-  footer {
-    font-size: 0.8rem;
-    padding: 15px;
-  }
-}
+ header .wrap{
+      max-width:var(--maxw);
+      margin:0 auto;
+      padding:0 20px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+    header h1{
+      margin:0;
+      font-size:1.4rem;
+      letter-spacing:0.5px;
+    }
+    nav a{
+      color:#fff;
+      text-decoration:none;
+      margin-left:20px;
+      font-weight:500;
+    }
+    .hero{
+      text-align:center;
+      padding:60px 20px;
+      background:linear-gradient(120deg,#eaf2ff,#fff6e5);
+    }
+    .hero h2{
+      font-size:2rem;
+      color:var(--blue);
+      margin-bottom:10px;
+    }
+    .hero p{color:var(--muted);}
+    .btn{
+      background:var(--gold);
+      color:white;
+      padding:12px 24px;
+      border-radius:8px;
+      text-decoration:none;
+      font-weight:600;
+      display:inline-block;
+      margin-top:20px;
+    }
+    section{
+      max-width:var(--maxw);
+      margin:60px auto;
+      padding:0 20px;
+    }
+    h3{color:var(--blue);}
+    iframe{
+      width:100%;
+      height:600px;
+      border:0;
+      border-radius:10px;
+      box-shadow:0 6px 20px rgba(0,0,0,0.08);
+    }
+    footer{
+      background:#0b3d91;
+      color:white;
+      text-align:center;
+      padding:20px;
+      font-size:0.9rem;
+      margin-top:60px;
+    }
     @media(max-width: 768px) {
       .hero h2{font-size:1.6rem;}
       iframe{height:500px;}
