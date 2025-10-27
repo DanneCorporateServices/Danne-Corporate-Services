@@ -119,6 +119,46 @@ body::before {
       font-size:0.9rem;
       margin-top:60px;
     }
+    /* Hamburger Menu Styles */
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: white;
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+  nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    background-color: var(--blue);
+    text-align: left;
+    padding: 15px 20px;
+    border-radius: 8px;
+  }
+
+  nav a {
+    display: block;
+    margin: 10px 0;
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  header .wrap {
+    align-items: flex-start;
+  }
+}
     @media(max-width: 768px) {
       .hero h2{font-size:1.6rem;}
       iframe{height:500px;}
@@ -202,15 +242,23 @@ html {
 </head>
 <body>
   <header>
-    <div class="wrap">
-      <h1><img src="logo.png" alt="Danne Corporate Services" height="45">anne Corporate Services</h1>
-      <nav>
-        <a href="#about">About</a>
-        <a href="#bot">Governance Advisor</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
-  </header>
+  <div class="wrap">
+    <h1>
+      <img src="logo.png" alt="Danne Corporate Services" height="45">
+      anne Corporate Services
+    </h1>
+
+    <!-- Hamburger Toggle Button -->
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+    <!-- Navigation Menu -->
+    <nav id="navbar">
+      <a href="#about">About</a>
+      <a href="#bot">Governance Advisor</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
 
   <div class="hero">
     <h2>Governance Made Simple</h2>
@@ -337,6 +385,12 @@ window.addEventListener("scroll", () => {
     }
   });
 });
+</script>
+<script>
+  function toggleMenu() {
+    const nav = document.getElementById('navbar');
+    nav.classList.toggle('active');
+  }
 </script>
 
   <footer>
