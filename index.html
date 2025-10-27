@@ -123,6 +123,57 @@ body::before {
       .hero h2{font-size:1.6rem;}
       iframe{height:500px;}
     }
+    @media (max-width: 768px) {
+  header .wrap {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  header h1 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+
+  nav a {
+    display: inline-block;
+    margin: 6px 10px 0 0;
+    font-size: 0.9rem;
+  }
+
+  .hero {
+    padding: 40px 15px;
+  }
+
+  .hero h2 {
+    font-size: 1.4rem;
+    line-height: 1.3;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+  }
+
+  .btn {
+    display: block;
+    margin: 12px auto;
+    width: 80%;
+    text-align: center;
+  }
+
+  section {
+    margin: 40px auto;
+    padding: 0 15px;
+  }
+
+  iframe {
+    height: 400px;
+  }
+
+  footer {
+    font-size: 0.8rem;
+    padding: 15px;
+  }
+}
 html {
   scroll-behavior: smooth;
 }
