@@ -198,6 +198,14 @@ nav {
   transform: translateY(-5px);
   box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
+    .service-card {
+  transition: all 0.3s ease;
+}
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border-top: 4px solid var(--gold);
+}
     @media(max-width: 768px) {
       .hero h2{font-size:1.6rem;}
       iframe{height:500px;}
@@ -333,12 +341,19 @@ html {
 
 <p>We combine expertise, technology, and integrity to help businesses stay focused on what matters most, <strong>growth, sustainability, and good governance.</strong></p>
   <!-- Our Services Section -->
-<section id="services">
-  <h3>Our Core Services</h3>
+<!-- Our Core Services Banner -->
+<section id="services-banner" style="position: relative; text-align: center; color: white;">
+  <img src="services-banner.png" alt="Our Core Services Banner" 
+       style="width:100%; height:auto; border-radius:8px;">
+  <div style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%);
+              background:rgba(0,0,0,0.4); padding:20px 40px; border-radius:8px;">
+    <h2 style="font-size:2rem; color:#f4c542; margin:0;">Our Core Services</h2>
+    <p style="font-size:1.1rem; margin-top:10px;">What We Do — Governance, Compliance & Secretarial Support</p>
   <p style="color: var(--muted); margin-bottom: 40px;">
     We offer a full range of corporate governance and compliance solutions designed to help your business stay structured, compliant, and sustainable.
   </p>
-
+  </div>
+</section>
   <div class="services-grid">
     <div class="service-card">
       <h4>Company Incorporation</h4>
@@ -369,6 +384,9 @@ html {
       <h4>Company Secretarial Services</h4>
       <p>Providing structured secretarial and record-keeping support to ensure your company maintains full compliance year-round.</p>
     </div>
+    <div style="text-align:center; margin-top:40px;">
+  <a href="mailto:dannecorporateservices@gmail.com?subject=Service Inquiry" class="btn">Request a Service</a>
+</div>
   </div>
 </section>
 <!-- Founder’s Desk Section -->
