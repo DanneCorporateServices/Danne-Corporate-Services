@@ -168,6 +168,36 @@ nav {
     align-items: flex-start;
   }
 }
+    .services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.service-card {
+  background: white;
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+  border-top: 4px solid var(--gold);
+}
+
+.service-card h4 {
+  color: var(--blue);
+  margin-bottom: 10px;
+}
+
+.service-card p {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
     @media(max-width: 768px) {
       .hero h2{font-size:1.6rem;}
       iframe{height:500px;}
@@ -302,7 +332,70 @@ html {
 <strong>To empower organizations with the structure, compliance, and confidence needed to thrive in today’s regulated business environment.</strong></p>
 
 <p>We combine expertise, technology, and integrity to help businesses stay focused on what matters most, <strong>growth, sustainability, and good governance.</strong></p>
-  <section id="bot">
+  <!-- Our Services Section -->
+<section id="services">
+  <h3>Our Core Services</h3>
+  <p style="color: var(--muted); margin-bottom: 40px;">
+    We offer a full range of corporate governance and compliance solutions designed to help your business stay structured, compliant, and sustainable.
+  </p>
+
+  <div class="services-grid">
+    <div class="service-card">
+      <h4>Company Incorporation</h4>
+      <p>Business name registration and incorporation with the Corporate Affairs Commission (CAC), ensuring legal compliance from the start.</p>
+    </div>
+
+    <div class="service-card">
+      <h4>Annual Returns & Post-Incorporation</h4>
+      <p>Filing of annual returns and updates such as directors’ changes, share structure amendments, and company information updates.</p>
+    </div>
+
+    <div class="service-card">
+      <h4>Corporate Governance Advisory</h4>
+      <p>Guiding boards and management teams to establish transparent and effective governance systems aligned with CAMA and best practices.</p>
+    </div>
+
+    <div class="service-card">
+      <h4>Regulatory Compliance</h4>
+      <p>Monitoring and supporting your organization’s adherence to regulatory obligations across various agencies and sectors.</p>
+    </div>
+
+    <div class="service-card">
+      <h4>SMEDAN & IP Registration</h4>
+      <p>Helping you secure your business identity with SMEDAN and protect your intellectual property rights in Nigeria.</p>
+    </div>
+
+    <div class="service-card">
+      <h4>Company Secretarial Services</h4>
+      <p>Providing structured secretarial and record-keeping support to ensure your company maintains full compliance year-round.</p>
+    </div>
+  </div>
+</section>
+<!-- Founder’s Desk Section -->
+<section id="founder" style="background:#f4f7fb; padding:60px 20px;">
+  <div style="max-width:1000px; margin:0 auto; display:flex; flex-wrap:wrap; align-items:center; gap:40px;">
+    
+    <!-- Founder Image -->
+    <div style="flex:1 1 300px; text-align:center;">
+      <img src="quadri-oloko.jpg" alt="Quadri Oloko - Founder of Danne Corporate Services" 
+           style="width:260px; height:260px; object-fit:cover; border-radius:50%; box-shadow:0 6px 20px rgba(0,0,0,0.1);">
+    </div>
+
+    <!-- Founder Text -->
+    <div style="flex:2 1 400px;">
+      <h3 style="color:var(--blue); margin-bottom:10px;">From the Founder’s Desk</h3>
+      <p style="color:var(--muted); line-height:1.8;">
+        At <strong>Danne Corporate Services</strong>, our goal is to simplify governance and compliance for every business in Nigeria. 
+        We help entrepreneurs, SMEs, and corporations navigate complex regulatory processes with confidence, ensuring every organization operates within the framework of the <em>Companies and Allied Matters Act (CAMA)</em> and other relevant laws.
+      </p>
+      <p style="color:var(--muted); line-height:1.8;">
+        As a professional and governance advisor, I believe that excellence, transparency, and attention to detail are the foundation of sustainable corporate growth.
+      </p>
+      <p style="margin-top:20px; font-weight:600; color:var(--blue);">— Quadri Oloko<br><span style="font-size:0.95rem; color:var(--gold);">Principal Consultant</span></p>
+    </div>
+  </div>
+</section>
+    <section id="bot">
     <h3>Meet the Governance Advisor Bot 🤖</h3>
     <p>Ask questions, explore compliance tips, and learn best practices. Your virtual governance assistant is always available.</p>
 
