@@ -363,62 +363,88 @@ html {
     <!-- Hamburger Toggle Button -->
     <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 
- <!-- Navigation Menu -->
+<!-- CLEAN NAVIGATION (FINAL VERSION) -->
 <header style="background: linear-gradient(90deg, #1e3c72, #2a5298); color: white; padding: 10px 20px; position: sticky; top: 0; z-index: 1000;">
-  <nav id="navbar" style="display: flex; align-items: center; max-width: 980px; margin: 0 auto;">
+  <nav id="navbar" style="display: flex; align-items: center;">
     <div class="logo" style="flex: 1; display: flex; align-items: center; gap: 10px;">
-      <img src="logo.png" alt="Danne Logo" style="width: 40px; height: 40px;"> <!-- Your logo -->
+      <img src="logo.png" alt="Danne Logo" style="width: 36px; height: 36px;">
       <h1 style="margin: 0; font-size: 18px;">Danne Corporate Services</h1>
     </div>
+
     <!-- Desktop Menu -->
-    <ul id="desktop-menu" style="display: flex; list-style: none; margin: 0; padding: 0; gap: 20px;">
-      <li><a href="/" style="color: white; text-decoration: none; font-weight: 500;">Home</a></li>
-      <li><a href="#about" style="color: white; text-decoration: none; font-weight: 500;">About</a></li>
-      <li><a href="#services" style="color: white; text-decoration: none; font-weight: 500;">Services</a></li>
-      <li><a href="tax-calculator/" style="color: white; text-decoration: none; font-weight: 600; background: rgba(255,255,255,0.2); padding: 8px 12px; border-radius: 4px;">Tax Calculator</a></li>
-      <li><a href="#founder" style="color: white; text-decoration: none; font-weight: 500;">Founder</a></li>
-      <li><a href="#testimonials" style="color: white; text-decoration: none; font-weight: 500;">Testimonials</a></li>
-      <li><a href="#bot" style="color: white; text-decoration: none; font-weight: 500;">Governance Advisor</a></li>
-      <li><a href="#contact" style="color: white; text-decoration: none; font-weight: 500;">Contact</a></li>
-      <li><a href="#cta" style="color: white; text-decoration: none; font-weight: 500;">Consultation</a></li>
+    <ul id="desktop-menu" style="display: flex; gap: 20px; list-style: none; margin: 0; padding: 0;">
+      <li><a href="/" style="color: white; text-decoration: none;">Home</a></li>
+      <li><a href="#about" style="color: white; text-decoration: none;">About</a></li>
+      <li><a href="#services" style="color: white; text-decoration: none;">Services</a></li>
+      <li><a href="tax-calculator/" style="color: white; font-weight: 600; background: rgba(255,255,255,0.2); padding: 6px 10px; border-radius: 4px; text-decoration: none;">Tax Calculator</a></li>
+      <li><a href="#founder" style="color: white; text-decoration: none;">Founder</a></li>
+      <li><a href="#testimonials" style="color: white; text-decoration: none;">Testimonials</a></li>
+      <li><a href="#bot" style="color: white; text-decoration: none;">Governance Advisor</a></li>
+      <li><a href="#contact" style="color: white; text-decoration: none;">Contact</a></li>
+      <li><a href="#cta" style="color: white; text-decoration: none;">Consultation</a></li>
     </ul>
-    <!-- Hamburger for Mobile -->
-    <button id="hamburger" style="background: none; border: none; color: white; font-size: 24px; cursor: pointer; display: none;">☰</button>
+
+    <!-- Hamburger -->
+    <button id="hamburger" style="display: none; background: none; border: none; color: white; font-size: 28px; cursor: pointer;">☰</button>
   </nav>
 </header>
 
-<!-- Mobile Dropdown Menu (Hidden by Default) -->
-<ul id="mobile-menu" style="background: #1e3c72; color: white; display: none; flex-direction: column; gap: 10px; padding: 20px; position: absolute; top: 100%; left: 0; right: 0; z-index: 999; list-style: none; margin: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
-  <li><a href="/" style="color: white; text-decoration: none; font-weight: 500; padding: 8px 0;">Home</a></li>
-  <li><a href="#about" style="color: white; text-decoration: none; font-weight: 500; padding: 8px 0;">About</a></li>
-  <li><a href="#services" style="color: white; text-decoration: none; font-weight: 500; padding: 8px 0;">Services</a></li>
-  <li><a href="tax-calculator/" style="color: white; text-decoration: none; font-weight: 600; background: rgba(255,255,255,0.2); padding: 8px 12px; border-radius: 4px; text-align: center;">Tax Calculator</a></li>
-  <li><a href="#founder" style="color: white; text-decoration: none; font-weight: 500; padding: 8px 0;">Founder</a></li>
-  <li><a href="#testimonials" style="color: white; text-decoration: none; font-weight: 500; padding: 8px 0;">Testimonials</a></li>
-  <li><a href="#bot" style="color: white; text-decoration: none; font-weight: 500; padding: 8px 0;">Governance Advisor</a></li>
-  <li><a href="#contact" style="color: white; text-decoration: none; font-weight: 500; padding: 8px 0;">Contact</a></li>
-  <li><a href="#cta" style="color: white; text-decoration: none; font-weight: 500; padding: 8px 0;">Consultation</a></li>
+<!-- MOBILE DROPDOWN MENU -->
+<ul id="mobile-menu" style="
+  background: #1e3c72;
+  display: none;
+  flex-direction: column;
+  list-style: none;
+  padding: 20px;
+  margin: 0;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  right: 0;
+  z-index: 999;
+">
+  <li><a href="/" style="color: white; padding: 10px 0; text-decoration: none;">Home</a></li>
+  <li><a href="#about" style="color: white; padding: 10px 0; text-decoration: none;">About</a></li>
+  <li><a href="#services" style="color: white; padding: 10px 0; text-decoration: none;">Services</a></li>
+  <li><a href="tax-calculator/" style="color: white; padding: 10px 0; text-decoration: none;">Tax Calculator</a></li>
+  <li><a href="#founder" style="color: white; padding: 10px 0; text-decoration: none;">Founder</a></li>
+  <li><a href="#testimonials" style="color: white; padding: 10px 0; text-decoration: none;">Testimonials</a></li>
+  <li><a href="#bot" style="color: white; padding: 10px 0; text-decoration: none;">Governance Advisor</a></li>
+  <li><a href="#contact" style="color: white; padding: 10px 0; text-decoration: none;">Contact</a></li>
+  <li><a href="#cta" style="color: white; padding: 10px 0; text-decoration: none;">Consultation</a></li>
 </ul>
 
 <style>
-  /* Responsive Navigation */
   @media (max-width: 768px) {
     #desktop-menu {
-      display: none !important; /* Hide desktop menu on mobile */
+      display: none !important;
     }
     #hamburger {
-      display: block !important; /* Show hamburger */
-    }
-    #mobile-menu {
-      display: none; /* Hidden by default */
+      display: block !important;
     }
     #mobile-menu.active {
-      display: flex !important; /* Show dropdown when active */
+      display: flex !important;
     }
   }
 </style>
 
 <script>
+  const hamburger = document.getElementById("hamburger");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  hamburger.addEventListener("click", () => {
+    mobileMenu.classList.toggle("active");
+    hamburger.textContent = mobileMenu.classList.contains("active") ? "✕" : "☰";
+  });
+
+  mobileMenu.querySelectorAll("a").forEach(a => {
+    a.addEventListener("click", () => {
+      mobileMenu.classList.remove("active");
+      hamburger.textContent = "☰";
+    });
+  });
+</script>
+
   // Hamburger Toggle
   const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobile-menu');
