@@ -363,7 +363,6 @@ html {
       justify-content: space-between;
       align-items: center;
   ">
-
     <!-- LOGO -->
     <h1 style="
       display: flex;
@@ -371,6 +370,7 @@ html {
       gap: 10px;
       font-size: 1.3rem;
       margin: 0;
+      margin-right: 20px; /* Added to create buffer space and prevent overlap */
       color: white;
       white-space: nowrap;
     ">
@@ -378,7 +378,6 @@ html {
            height="45" style="vertical-align: middle;">
       <span style="font-weight: 600;">anne Corporate Services</span>
     </h1>
-
     <!-- DESKTOP MENU -->
     <ul id="desktop-menu" style="
       display: flex;
@@ -389,7 +388,6 @@ html {
     ">
       <li><a href="#about" style="color: white; text-decoration: none;">About</a></li>
       <li><a href="#services" style="color: white; text-decoration: none;">Services</a></li>
-
       <li>
         <a href="tax-calculator/"
            style="color: white; font-weight: 600; background: rgba(255,255,255,0.25);
@@ -397,14 +395,12 @@ html {
           Tax Calculator
         </a>
       </li>
-
       <li><a href="#founder" style="color: white; text-decoration: none;">Founder</a></li>
       <li><a href="#testimonials" style="color: white; text-decoration: none;">Testimonials</a></li>
       <li><a href="#bot" style="color: white; text-decoration: none;">Governance Advisor</a></li>
       <li><a href="#contact" style="color: white; text-decoration: none;">Contact</a></li>
       <li><a href="#cta" style="color: white; text-decoration: none;">Consultation</a></li>
     </ul>
-
     <!-- HAMBURGER -->
     <button id="hamburger" style="
       display: none;
@@ -417,7 +413,6 @@ html {
     ">
       ☰
     </button>
-
   </div>
 </header>
 <!-- MOBILE MENU -->
@@ -443,38 +438,31 @@ html {
   <li><a href="#contact" style="color: white; padding: 14px 0; text-decoration: none; display: block;">Contact</a></li>
   <li><a href="#cta" style="color: white; padding: 14px 0; text-decoration: none; display: block;">Consultation</a></li>
 </ul>
-
 <!-- RESPONSIVE RULES -->
 <style>
   @media (max-width: 768px) {
     #desktop-menu {
       display: none !important;
     }
-
     #hamburger {
       display: block !important;
     }
-
     #mobile-menu.active {
       display: flex !important;
     }
-
     header .wrap {
       padding-right: 10px;
     }
   }
 </style>
-
 <!-- TOGGLE SCRIPT -->
 <script>
   const hamburger = document.getElementById("hamburger");
   const mobileMenu = document.getElementById("mobile-menu");
-
   hamburger.addEventListener("click", () => {
     mobileMenu.classList.toggle("active");
     hamburger.textContent = mobileMenu.classList.contains("active") ? "✕" : "☰";
   });
-
   mobileMenu.querySelectorAll("a").forEach(link => {
     link.addEventListener("click", () => {
       mobileMenu.classList.remove("active");
