@@ -355,71 +355,114 @@ html {
 </head>
 <body>
 <!-- CLEAN RESPONSIVE HEADER -->
-<header style="background: #1e3c72; padding: 10px 0; position: sticky; top: 0; z-index: 999;">
-  <div class="wrap" style="
-      width: 92%;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-  ">
+<header>
+  <nav class="navbar">
+    <div class="nav-left">
+      <img src="logo.png" alt="anne Corporate Services Logo" height="48" class="logo">
+      <span class="company-name">Danne Corporate Services</span>
+    </div>
 
-    <!-- LOGO -->
-    <h1 style="
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 1.3rem;
-      margin: 0;
-      color: white;
-      white-space: nowrap;
-    ">
-      <img src="logo.png" alt="Danne Corporate Services Logo"
-           height="45" style="vertical-align: middle;">
-      <span style="font-weight: 600;">anne Corporate Services</span>
-    </h1>
-
-    <!-- DESKTOP MENU -->
-    <ul id="desktop-menu" style="
-      display: flex;
-      gap: 28px;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    ">
-      <li><a href="#about" style="color: white; text-decoration: none;">About</a></li>
-      <li><a href="#services" style="color: white; text-decoration: none;">Services</a></li>
-
-      <li>
-        <a href="tax-calculator/"
-           style="color: white; font-weight: 600; background: rgba(255,255,255,0.25);
-                  padding: 7px 12px; border-radius: 4px;">
-          Tax Calculator
-        </a>
-      </li>
-
-      <li><a href="#founder" style="color: white; text-decoration: none;">Founder</a></li>
-      <li><a href="#testimonials" style="color: white; text-decoration: none;">Testimonials</a></li>
-      <li><a href="#bot" style="color: white; text-decoration: none;">Governance Advisor</a></li>
-      <li><a href="#contact" style="color: white; text-decoration: none;">Contact</a></li>
-      <li><a href="#cta" style="color: white; text-decoration: none;">Consultation</a></li>
-    </ul>
-
-    <!-- HAMBURGER -->
-    <button id="hamburger" style="
-      display: none;
-      background: none;
-      border: none;
-      color: white;
-      font-size: 32px;
-      cursor: pointer;
-      margin-left: auto;
-    ">
+    <button class="hamburger" id="hamburgerBtn">
       ☰
     </button>
 
-  </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#consultation">Consultation</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 </header>
+/* Header styling */
+header {
+  width: 100%;
+  background: white;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Nav container */
+.navbar {
+  max-width: 1300px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 40px; /* increased left-right spacing */
+}
+
+/* Logo + Company name */
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* more spacing between logo & name */
+}
+
+.company-name {
+  font-size: 20px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Desktop menu */
+.nav-links {
+  display: flex;
+  gap: 48px; /* increased spacing between menu items */
+  list-style: none;
+  margin-left: 40px; /* pushes menu far from company name */
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #222;
+  font-weight: 500;
+}
+
+/* Hamburger icon */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+  
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    background: white;
+    padding: 20px;
+    width: 220px;
+    border-radius: 10px;
+    gap: 18px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+
+  .navbar {
+    justify-content: space-between;
+    padding: 12px 20px; /* tighter on mobile */
+  }
+
+  .nav-links a {
+    padding: 10px 0;
+  }
+}
+
+/* Show mobile menu */
+.nav-links.active {
+  display: flex;
+}
 
 <!-- MOBILE MENU -->
 <ul id="mobile-menu" style="
@@ -829,5 +872,10 @@ window.addEventListener("scroll", () => {
 <!-- Chatbot -->
 <script src="https://cdn.botpress.cloud/webchat/v3.4/inject.js"></script>
 <script src="https://files.bpcontent.cloud/2025/12/04/14/20251204141739-DRYLGSW4.js" defer></script>
+<script>
+  document.getElementById("hamburgerBtn").addEventListener("click", function () {
+    document.getElementById("navLinks").classList.toggle("active");
+  });
+</script>
 </body>
 </html>
