@@ -363,23 +363,79 @@ html {
     <!-- Hamburger Toggle Button -->
     <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 
-    <!-- Navigation Menu -->
-    <nav id="navbar">
-     <header>
-  <!-- Your logo/h1 -->
-  <nav style="display:flex;gap:20px;">
-    <a href="/" style="color:white;text-decoration:none;">Home</a>
-    <a href="#about">About</a>
-  <a href="#services">Services</a>
-    <a href="tax-calculator/" style="color:white;text-decoration:none;font-weight:600;">Tax Calculator</a>
- <a href="#founder">Founder</a>
-  <a href="#testimonials">Testimonials</a>
-  <a href="#bot">Governance Advisor</a>
-  <a href="#contact">Contact</a>
-  <a href="#cta">Consultation</a>
+   <!-- Navigation Menu -->
+<header style="background: linear-gradient(90deg, #1e3c72, #2a5298); color: white; padding: 10px 20px; position: sticky; top: 0; z-index: 1000;">
+  <!-- Your logo/h1 here if needed -->
+  <nav id="navbar" style="display: flex; gap: 20px; align-items: center; max-width: 980px; margin: 0 auto;">
+    <div class="logo" style="flex: 1;">
+      <h1 style="margin: 0; font-size: 20px;">Danne Corporate Services</h1>
+    </div>
+    <ul id="nav-menu" style="display: flex; list-style: none; margin: 0; padding: 0; gap: 20px; flex-wrap: wrap;">
+      <li><a href="/" style="color: white; text-decoration: none; font-weight: 500;">Home</a></li>
+      <li><a href="#about" style="color: white; text-decoration: none; font-weight: 500;">About</a></li>
+      <li><a href="#services" style="color: white; text-decoration: none; font-weight: 500;">Services</a></li>
+      <li><a href="tax-calculator/" style="color: white; text-decoration: none; font-weight: 600; background: rgba(255,255,255,0.2); padding: 8px 12px; border-radius: 4px;">Tax Calculator</a></li>
+      <li><a href="#founder" style="color: white; text-decoration: none; font-weight: 500;">Founder</a></li>
+      <li><a href="#testimonials" style="color: white; text-decoration: none; font-weight: 500;">Testimonials</a></li>
+      <li><a href="#bot" style="color: white; text-decoration: none; font-weight: 500;">Governance Advisor</a></li>
+      <li><a href="#contact" style="color: white; text-decoration: none; font-weight: 500;">Contact</a></li>
+      <li><a href="#cta" style="color: white; text-decoration: none; font-weight: 500;">Consultation</a></li>
+    </ul>
+    <!-- Hamburger Icon for Mobile -->
+    <button id="hamburger" style="background: none; border: none; color: white; font-size: 24px; cursor: pointer; display: none;">☰</button>
   </nav>
-     </div>
 </header>
+
+<!-- Mobile Menu (Hidden by Default) -->
+<div id="mobile-menu" style="background: #1e3c72; color: white; display: none; flex-direction: column; gap: 10px; padding: 20px; position: absolute; top: 100%; left: 0; right: 0; z-index: 999;">
+  <a href="/" style="color: white; text-decoration: none; font-weight: 500;">Home</a>
+  <a href="#about" style="color: white; text-decoration: none; font-weight: 500;">About</a>
+  <a href="#services" style="color: white; text-decoration: none; font-weight: 500;">Services</a>
+  <a href="tax-calculator/" style="color: white; text-decoration: none; font-weight: 600; background: rgba(255,255,255,0.2); padding: 8px 12px; border-radius: 4px; text-align: center;">Tax Calculator</a>
+  <a href="#founder" style="color: white; text-decoration: none; font-weight: 500;">Founder</a>
+  <a href="#testimonials" style="color: white; text-decoration: none; font-weight: 500;">Testimonials</a>
+  <a href="#bot" style="color: white; text-decoration: none; font-weight: 500;">Governance Advisor</a>
+  <a href="#contact" style="color: white; text-decoration: none; font-weight: 500;">Contact</a>
+  <a href="#cta" style="color: white; text-decoration: none; font-weight: 500;">Consultation</a>
+</div>
+
+<style>
+  /* Responsive Navigation */
+  @media (max-width: 768px) {
+    #navbar ul {
+      display: none; /* Hide main menu on mobile */
+    }
+    #hamburger {
+      display: block !important; /* Show hamburger */
+    }
+    #mobile-menu {
+      display: none; /* Hidden by default */
+    }
+    #mobile-menu.active {
+      display: flex !important; /* Show when active */
+    }
+  }
+</style>
+
+<script>
+  // Hamburger Toggle
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const navMenu = document.getElementById('nav-menu');
+
+  hamburger.addEventListener('click', () => {
+    mobileMenu.classList.toggle('active');
+    hamburger.textContent = mobileMenu.classList.contains('active') ? '✕' : '☰';
+  });
+
+  // Close mobile menu on link click
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('active');
+      hamburger.textContent = '☰';
+    });
+  });
+</script>
     
 <!-- TAX CALCULATOR BUTTON (ADD HERE) -->
 <a href="tax-calculator/" style="display:inline-block;padding:12px 24px;background:#1e3c72;color:white;border-radius:8px;text-decoration:none;font-weight:600;margin:10px 0;">Try 2026 Tax Calculator</a>
