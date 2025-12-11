@@ -363,13 +363,15 @@ html {
     <!-- Hamburger Toggle Button -->
     <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 
-  <!-- Navigation Menu -->
+ <!-- Navigation Menu -->
 <header style="background: linear-gradient(90deg, #1e3c72, #2a5298); color: white; padding: 10px 20px; position: sticky; top: 0; z-index: 1000;">
-  <nav id="navbar" style="display: flex; gap: 20px; align-items: center; max-width: 980px; margin: 0 auto;">
-    <div class="logo" style="flex: 1;">
-      <h1 style="margin: 0; font-size: 20px;">Danne Corporate Services</h1>
+  <nav id="navbar" style="display: flex; align-items: center; max-width: 980px; margin: 0 auto;">
+    <div class="logo" style="flex: 1; display: flex; align-items: center; gap: 10px;">
+      <img src="logo.png" alt="Danne Logo" style="width: 40px; height: 40px;"> <!-- Your logo -->
+      <h1 style="margin: 0; font-size: 18px;">Danne Corporate Services</h1>
     </div>
-    <ul id="nav-menu" style="display: flex; list-style: none; margin: 0; padding: 0; gap: 20px; flex-wrap: wrap;">
+    <!-- Desktop Menu -->
+    <ul id="desktop-menu" style="display: flex; list-style: none; margin: 0; padding: 0; gap: 20px;">
       <li><a href="/" style="color: white; text-decoration: none; font-weight: 500;">Home</a></li>
       <li><a href="#about" style="color: white; text-decoration: none; font-weight: 500;">About</a></li>
       <li><a href="#services" style="color: white; text-decoration: none; font-weight: 500;">Services</a></li>
@@ -380,13 +382,13 @@ html {
       <li><a href="#contact" style="color: white; text-decoration: none; font-weight: 500;">Contact</a></li>
       <li><a href="#cta" style="color: white; text-decoration: none; font-weight: 500;">Consultation</a></li>
     </ul>
-    <!-- Hamburger Icon for Mobile -->
+    <!-- Hamburger for Mobile -->
     <button id="hamburger" style="background: none; border: none; color: white; font-size: 24px; cursor: pointer; display: none;">☰</button>
   </nav>
 </header>
 
-<!-- Mobile Menu Dropdown (Hidden by Default) -->
-<ul id="mobile-menu" style="background: #1e3c72; color: white; display: none; flex-direction: column; gap: 10px; padding: 20px; position: absolute; top: 100%; left: 0; right: 0; z-index: 999; list-style: none; margin: 0;">
+<!-- Mobile Dropdown Menu (Hidden by Default) -->
+<ul id="mobile-menu" style="background: #1e3c72; color: white; display: none; flex-direction: column; gap: 10px; padding: 20px; position: absolute; top: 100%; left: 0; right: 0; z-index: 999; list-style: none; margin: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
   <li><a href="/" style="color: white; text-decoration: none; font-weight: 500; padding: 8px 0;">Home</a></li>
   <li><a href="#about" style="color: white; text-decoration: none; font-weight: 500; padding: 8px 0;">About</a></li>
   <li><a href="#services" style="color: white; text-decoration: none; font-weight: 500; padding: 8px 0;">Services</a></li>
@@ -401,8 +403,8 @@ html {
 <style>
   /* Responsive Navigation */
   @media (max-width: 768px) {
-    #navbar ul {
-      display: none; /* Hide main menu on mobile */
+    #desktop-menu {
+      display: none !important; /* Hide desktop menu on mobile */
     }
     #hamburger {
       display: block !important; /* Show hamburger */
@@ -411,7 +413,7 @@ html {
       display: none; /* Hidden by default */
     }
     #mobile-menu.active {
-      display: flex !important; /* Show when active */
+      display: flex !important; /* Show dropdown when active */
     }
   }
 </style>
@@ -420,14 +422,13 @@ html {
   // Hamburger Toggle
   const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobile-menu');
-  const navMenu = document.getElementById('nav-menu');
 
   hamburger.addEventListener('click', () => {
     mobileMenu.classList.toggle('active');
     hamburger.textContent = mobileMenu.classList.contains('active') ? '✕' : '☰';
   });
 
-  // Close mobile menu on link click
+  // Close on link click
   mobileMenu.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
       mobileMenu.classList.remove('active');
