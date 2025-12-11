@@ -364,23 +364,23 @@ html {
       align-items: center;
   ">
 
-    <!-- LOGO + NAME -->
-    <h1 style="
+    <!-- LOGO + COMPANY NAME -->
+    <div style="
         display: flex;
         align-items: center;
-        gap: 10px;
-        margin: 0;
+        gap: 12px;
+        margin-right: 60px; /* ADDS SPACE BEFORE THE MENU */
         white-space: nowrap;
         flex-shrink: 0;
     ">
-      <img src="logo.png" alt="Danne Corporate Services Logo" height="48">
-      <span style="font-weight: 600; font-size: 1.4rem; color: white;">Danne Corporate Services</span>
-    </h1>
+      <img src="logo.png" alt="anne Corporate Services Logo" height="48">
+      <span style="font-weight: 600; font-size: 1.4rem; color: white;">anne Corporate Services</span>
+    </div>
 
     <!-- DESKTOP MENU -->
     <ul id="desktop-menu" style="
         display: flex;
-        gap: 28px;
+        gap: 36px; /* SPREAD MENU ITEMS MORE */
         list-style: none;
         margin: 0;
         padding: 0;
@@ -397,7 +397,7 @@ html {
       <li><a href="#cta" style="color: white; text-decoration: none;">Consultation</a></li>
     </ul>
 
-    <!-- HAMBURGER (Moved inline to the right) -->
+    <!-- HAMBURGER -->
     <button id="hamburger" style="
         display: none;
         background: none;
@@ -443,7 +443,7 @@ html {
   #mobile-menu.active { display: flex !important; }
 </style>
 
-<!-- MENU TOGGLE -->
+<!-- TOGGLE SCRIPT -->
 <script>
   const hamburger = document.getElementById("hamburger");
   const mobileMenu = document.getElementById("mobile-menu");
